@@ -1,0 +1,55 @@
+.temperature {
+  font-size: 40px;
+  padding-right: 300px;
+  color: #333333;
+}
+
+.container {
+  border: solid 3px slategray;
+  height: 200px;
+  width: 500px;
+  border-radius: 10px;
+  padding: 15px;
+}
+form {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+body {
+  font-family: arial, sans-serif;
+}
+.current-city {
+  list-style: none;
+  display: block;
+  width: 550px;
+  text-align: left;
+  color: #555555;
+  margin: 0;
+}
+li {
+  list-style: none;
+  line-height: 1;
+  height: 19px;
+}
+#temperature {
+  color: darkslategray;
+  font-size: 40px;
+}
+
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+.humidwind {
+  padding-left: 280px;
+  margin-top: -70px;
+}
+.units {
+  position: relative;
+  top: -23px;
+  padding-left: 40px;
+}
