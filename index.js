@@ -20,17 +20,26 @@ function formatDate(date) {
   return `${days[dayIndex]} ${hours}:${minutes}`;
 }
 
-function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-
+function displayCurrentTemperature(response) {
+  fahrenheitTemp = response.data.main.temp;
+  document.querySelector("h1").innerHTML = Math.round(fahrenheitTemp);
+  document.querySelector("h3").innerHTML = `in ${response.data.name}`;
+  document.querySelector("#conditions").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  document.querySelector("#wind-conditions").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  fahrenheitMax = response.data.main.temp_max;
+  document.querySelector("#temp-max").innerHTML = `${Math.round(
+    fahrenheitMax
+  )}°`;
+  fahrenheitMin = response.data.main.temp_min;
+  document.querySelector("#temp-min").innerHTML = `${Math.round(
+    fahrenheitMin
+  )}°`;
 }
+
 function searchCity(city) {
   let apiKey = "893f85209adc85644388072cc867bd9e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
