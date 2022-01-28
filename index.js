@@ -54,6 +54,20 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+function displayCelsiusTemperatures(event) {
+  event.preventDefault();
+  fahrenheitButton.classList.remove("active");
+  celsiusButton.classList.add("active");
+  let celsiusTemp = Math.round(((fahrenheitTemp - 32) * 5) / 9);
+  document.querySelector("h1").innerHTML = celsiusTemp;
+  let celsiusMax = `${Math.round(((fahrenheitMax - 32) * 5) / 9)}°`;
+  document.querySelector("#temp-max").innerHTML = celsiusMax;
+  let celsiusMin = `${Math.round(((fahrenheitMin - 32) * 5) / 9)}°`;
+  document.querySelector("#temp-min").innerHTML = celsiusMin;
+}
+
+let celsiusButton = document.querySelector("#celsius-link");
+celsiusButton.addEventListener("click", displayCelsiusTemperatures);
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
