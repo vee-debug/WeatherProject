@@ -58,7 +58,8 @@ searchForm.addEventListener("submit", conductSearch);
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", conductSearch);
 
-searchCity("Palermo");
+searchCity("Minneapolis");
+
 
 let fahrenheitTemp = null;
 let fahrenheitMax = null;
