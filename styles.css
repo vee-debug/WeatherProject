@@ -49,41 +49,6 @@ p {
   margin-left: 245px;
 }
 
-.dawn {
-  background-size: 1450px;
-  background-image: url("../media/dawn.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.sunrise {
-  background-size: 1450px;
-  background-image: url("../media/sunrise.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.afternoon {
-  background-size: 1500px;
-  background-image: url("../media/afternoon.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.sunset {
-  background-size: 1450px;
-  background-image: url("../media/sunset.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.night {
-  background-size: 1800px;
-  background-image: url("../media/night.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .page {
   display: block;
   margin: 175px auto 200px;
