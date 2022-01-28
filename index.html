@@ -13,37 +13,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <form class="search-form" id="search-form">
-            <div class="row">
-                <div class="col-6">
-                    <input type="city" placeholder="Type City" autofocus="on" autocomplete="off" id="city-input"
-                        class="form-control shadow-sm" />
-                </div>
-                <div class="col-3" id="city-input">
-                    <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100" />
-                </div>
-                <div class="col-3">
-                    <button class="btn btn-success w-100" id="current-location-button">
-                        Current
-                    </button>
-                </div>
-            </div>
-        </form>
-
-
-        <div class="current-city">
+    <body class="dawn sunrise afternoon sunset night" id="body">
+    <div class="page">
+      <div class="container">
+        <div class="row main-temp">
+          <div class="col-6 col-sm-1 temperature">
+            <h1></h1>
+          </div>
+          <div class="col-6 col-sm-1 units">
             <ul>
-                 <li class="celsius">
+              <li class="celsius">
                 <a href="#" id="celsius-link">C°</a>
               </li>
               <li class="fahrenheit">
                 <a href="#" id="fahrenheit-link" class="active">F°</a>
               </li>
-
             </ul>
-        </div>
-        <div class="col-md-4 offset-md-4 md-auto">
+          </div>
+          <div class="col-md-4 offset-md-4 md-auto">
             <form>
               <input
                 type="search"
@@ -54,16 +41,58 @@
               />
             </form>
           </div>
-        <div class="humidwind" class="col-6">
-            <ul>
-
-                <li>Precipitation: <span id="precipitation">0%</span>
-                </li>
-                <li>Humidity:<span id="humidity"></span>
-                </li>
-                <li> Wind: <span id="wind"></span></li>
-            </ul>
+          <div class="col-sm-auto">
+            <button id="search-button">🔍</button>
+          </div>
+          <div class="col-sm-auto">
+            <button id="current-button">📍</button>
+          </div>
         </div>
+        <ul>
+          <li>
+            <h3></h3>
+          </li>
+          <li><h6 id="date"></h6></li>
+        </ul>
+        <div class="row">
+          <div class="col-1 high-temp max-min-label">High</div>
+          <div class="col-1 low-temp max-min-label">Low</div>
+        </div>
+        <div class="row">
+          <div class="col-1" id="temp-max"></div>
+          <div class="col-1" id="temp-min"></div>
+        </div>
+        <div class="row weather-conditions">
+          <div class="col-8 conditions">
+            Conditions: <span id="conditions"></span>
+          </div>
+          <div class="col-8 humidity">
+            Humidity: <span id="humidity"></span>%
+          </div>
+          <div class="col-8 wind-conditions">
+            Wind: <span id="wind-conditions"></span> mph
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-2">
+            <div class="forecast-day">Sat</div>
+            <img
+              id="icon"
+              src="https://openweathermap.org/img/wn/04d@2x.png"
+              alt="clouds"
+              width="50px"
+            />
+            <br />
+            <div class="forecast-temperatures">
+              <span class="forecast-weather-max">75° </span>
+              <span class="forecast-weather-min"> 60°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
 
 <div class="text-center "><a href="https://github.com/vee-debug/WeatherProject/edit/main/index.html">Open-source code</a><span>by Vee</span></div>
         <script src="index.js"></script>
