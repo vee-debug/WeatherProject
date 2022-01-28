@@ -41,28 +41,22 @@ function displayCurrentTemperature(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "893f85209adc85644388072cc867bd9e";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-
-  axios.get(apiUrl).then(displayWeatherCondition);
+  let apiKey = "ed1ad0d4f5bbf7823ad1cdd74e7abf8c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayCurrentTemperature);
 }
 
-function handleSubmit(event) {
+function conductSearch(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
+  let cityInput = document.querySelector("#search-input");
+  searchCity(cityInput.value);
 }
-function searchLocation(position) {
-  let apiKey = "893f85209adc85644388072cc867bd9e";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
+let searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", conductSearch);
+
+let searchButton = document.querySelector("#search-button");
+searchButton.addEventListener("click", conductSearch);
 
 searchCity("Palermo");
 
