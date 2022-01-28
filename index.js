@@ -54,6 +54,13 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+
+searchCity("Palermo");
+
+let fahrenheitTemp = null;
+let fahrenheitMax = null;
+let fahrenheitMin = null;
+
 function displayCelsiusTemperatures(event) {
   event.preventDefault();
   fahrenheitButton.classList.remove("active");
@@ -94,5 +101,3 @@ searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-searchCity("Palermo");
