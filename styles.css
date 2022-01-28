@@ -69,7 +69,7 @@ h1 {
   border: 2px #00335a solid;
 }
 .description {
-  color: #0a426d;
+  color: #120307;
   font-size: 25px;
   font-weight: 600;
   text-align: left;
@@ -94,7 +94,7 @@ h1 {
   padding-left: 24px;
 }
 .weather-today-box {
-  background: #d9edfd;
+  background: #CE1DDD;
   border: 3px #0a426d solid;
   border-radius: 5px;
   color: #0a426d;
