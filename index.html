@@ -1,86 +1,89 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Weather App</title>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/9d7755b642.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
     <meta charset="UTF-8" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="styles.css" />
-</head>
-
-
-    <body class="dawn sunrise afternoon sunset night" id="body">
-    <div class="page">
-      <div class="container">
-        <div class="row main-temp">
-          <div class="col-6 col-sm-1 temperature">
-            <h1></h1>
-          </div>
-          <div class="col-6 col-sm-1 units">
-            <ul>
-              <li class="celsius">
-                <a href="#" id="celsius-link">C°</a>
-              </li>
-              <li class="fahrenheit">
-                <a href="#" id="fahrenheit-link" class="active">F°</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 offset-md-4 md-auto">
-            <form>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="src/styles.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+  <div class="weather-app-wrapper">  
+    <img
+      class="header-image"
+      src="images/cloudy.jpg"
+      alt="image of today's weather in your location"
+      style="object-fit: cover"
+    />
+    <br />
+    <div class="containter">
+      <div class="row">
+        <div class="col-sm-4">
+          <h1 id="selected-city"></h1>
+        </div>
+        <div class="col-sm-8">
+          <form class="city-search-form" id="city-search-form">
+            <span>
               <input
-                type="search"
+                type="text"
+                class="search-input"
                 id="search-input"
-                placeholder="Search a city"
+                placeholder="Enter your location..."
+                autofocus= "on"
                 autocomplete="off"
-                autofocus="on"
               />
-            </form>
-          </div>
-          
-        <ul>
-          <li>
-            <h3></h3>
-          </li>
-          <li><h6 id="date"></h6></li>
-        </ul>
-        <div class="row">
-          <div class="col-1 high-temp max-min-label">High</div>
-          <div class="col-1 low-temp max-min-label">Low</div>
-        </div>
-        <div class="row">
-          <div class="col-1" id="temp-max"></div>
-          <div class="col-1" id="temp-min"></div>
-        </div>
-        <div class="row weather-conditions">
-          <div class="col-8 conditions">
-            Conditions: <span id="conditions"></span>
-          </div>
-          <div class="col-8 humidity">
-            Humidity: <span id="humidity"></span>%
-          </div>
-          <div class="col-8 wind-conditions">
-            Wind: <span id="wind-conditions"></span> mph
-          </div>
-        </div>
-        <br />
-        <div class="row">
-          <div class="col-2">
-          
-            <br />
-            <div class="forecast-temperatures">
-              <span class="forecast-weather-max">75° </span>
-              <span class="forecast-weather-min"> 60°</span>
-            </div>
-          </div>
+            </span>
+            <button type="submit" class="location-button">🔍</button>
+            <span>
+              <button class="current-location-button" id="current-location-button">📍</button>
+            </span>
+          </form> <span id="search-value"></span>
         </div>
       </div>
-    </div>
-    <p>
+      <div class="row">
+        <div class="col-sm-5 description"id="description"></div>
+        <div class="col-sm-3 weather-details">Humidity: <span id="humidity"></span>%</div>
+        <div class="col-sm-4 weather-details">Wind speed: <span id="wind"></span>km/h</div>
+        <div class="col-sm-4 last-updated">Last updated: <span id="date-today"></span></div>
+      </div>
+      <div class="row">
+        <div class="col-sm weather-today-box">
+          <div class="todays-day" id="day-today">Mon</div>
+          <div class="todays-temp"> <span id="todays-temperature"></span>°c</div>
+          <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy" class="weather-icons" id="icons" />
+        </div>
+        <div class="col-sm future-forecast">
+          <div class="future-days">Day 2</div>
+          <div class="future-temps">0°c</div>
+          <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy" class="weather-icons" />
+        </div>
+        <div class="col-sm future-forecast">
+          <div class="future-days">Day 3</div>
+          <div class="future-temps">0°c</div>
+          <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy" class="weather-icons" />
+        </div>
+        <div class="col-sm future-forecast">
+          <div class="future-days">Day 4</div>
+          <div class="future-temps">0°c</div>
+          <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy" class="weather-icons" />
+        </div>
+        <div class="col-sm future-forecast">
+          <div class="future-days">Day 5</div>
+          <div class="future-temps">0°c</div>
+          <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy" class="weather-icons" />
+        </div>
+      </div>
 
 <div class="text-center "><a href="https://github.com/vee-debug/WeatherProject/edit/main/index.html">Open-source code</a><span>by Vee</span></div>
         <script src="index.js"></script>
