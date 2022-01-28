@@ -69,6 +69,22 @@ function displayCelsiusTemperatures(event) {
 let celsiusButton = document.querySelector("#celsius-link");
 celsiusButton.addEventListener("click", displayCelsiusTemperatures);
 
+function displayFahrenheitTemperatures(event) {
+  event.preventDefault();
+  celsiusButton.classList.remove("active");
+  fahrenheitButton.classList.add("active");
+  document.querySelector("h1").innerHTML = Math.round(fahrenheitTemp);
+  document.querySelector("#temp-max").innerHTML = `${Math.round(
+    fahrenheitMax
+  )}°`;
+  document.querySelector("#temp-min").innerHTML = `${Math.round(
+    fahrenheitMin
+  )}°`;
+}
+
+let fahrenheitButton = document.querySelector("#fahrenheit-link");
+fahrenheitButton.addEventListener("click", displayFahrenheitTemperatures);
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
