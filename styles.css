@@ -1,55 +1,206 @@
-.temperature {
-  font-size: 40px;
-  padding-right: 300px;
-  color: #333333;
-}
-
-.container {
-  border: solid 3px slategray;
-  height: 200px;
-  width: 500px;
-  border-radius: 10px;
-  padding: 15px;
-}
-form {
-  text-align: center;
-  margin: 0 auto;
-  display: block;
-  padding-bottom: 30px;
-  padding-top: 10px;
-}
-
 body {
-  font-family: arial, sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
-.current-city {
-  list-style: none;
-  display: block;
-  width: 550px;
-  text-align: left;
-  color: #555555;
-  margin: 0;
+
+h1 {
+  font-size: 120px;
+  margin-top: -25px;
+  margin-bottom: -15px;
 }
-li {
-  list-style: none;
-  line-height: 1;
-  height: 19px;
+
+h3 {
+  font-size: 30px;
+  margin-left: -20px;
 }
-#temperature {
-  color: darkslategray;
-  font-size: 40px;
+
+h6 {
+  margin-left: -19px;
+  margin-bottom: 25px;
 }
 
 ul {
-  margin: 0 0 10px;
-  padding: 0;
+  list-style: none;
 }
-.humidwind {
-  padding-left: 280px;
-  margin-top: -70px;
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  margin-top: -4px;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: 0s;
+}
+
+a:hover {
+  cursor: pointer;
+  color: black;
+}
+
+p {
+  margin-top: -190px;
+  margin-left: 245px;
+}
+
+.dawn {
+  background-size: 1450px;
+  background-image: url("../media/dawn.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sunrise {
+  background-size: 1450px;
+  background-image: url("../media/sunrise.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.afternoon {
+  background-size: 1500px;
+  background-image: url("../media/afternoon.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sunset {
+  background-size: 1450px;
+  background-image: url("../media/sunset.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.night {
+  background-size: 1800px;
+  background-image: url("../media/night.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page {
+  display: block;
+  margin: 175px auto 200px;
+  max-width: 950px;
+  border: solid 2px black;
+  padding: 2em;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 60px 55px,
+    rgba(0, 0, 0, 0.12) 0px -20px 35px, rgba(0, 0, 0, 0.12) 0px 10px 10px,
+    rgba(0, 0, 0, 0.17) 0px 20px 20px, rgba(0, 0, 0, 0.09) 0px -10px 10px;
+  border-radius: 7px;
+}
+
 .units {
   position: relative;
-  top: -23px;
-  padding-left: 40px;
+  left: 60px;
+  top: 48px;
+  font-size: 18px;
+}
+
+.celsius {
+  margin-bottom: 7px;
+  margin-left: -1px;
+}
+
+.fahrenheit {
+  margin-top: -3px;
+}
+
+.active {
+  color: white;
+}
+
+.max-min-label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.high-temp {
+  margin-left: 13px;
+}
+
+.low-temp {
+  margin-left: 55px;
+}
+
+.weather-conditions {
+  text-align: right;
+  margin-top: -40px;
+  margin-left: 50px;
+  font-size: 23px;
+  margin-bottom: 50px;
+}
+
+.conditions {
+  margin-left: 50px;
+}
+
+.wind-conditions {
+  margin-left: 0;
+}
+
+.forecast-day {
+  margin-left: 6px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.forecast-temperatures {
+  margin-left: -4px;
+}
+
+.forecast-weather-max {
+  opacity: 80;
+  font-weight: bold;
+}
+
+.github-link {
+  color: blue;
+}
+
+.github-link:hover {
+  color: blue;
+}
+
+#conditions {
+  text-transform: capitalize;
+}
+
+#search-input {
+  border: solid 3px black;
+  margin-left: 100px;
+  box-shadow: -2px 3px 4px 2px rgba(0, 0, 0, 0.17);
+  border-radius: 2px;
+}
+
+#search-button {
+  margin-left: 10px;
+}
+
+#current-button {
+  margin-left: 8px;
+}
+
+#temp-max {
+  margin-left: 23px;
+}
+
+#temp-min {
+  margin-left: 54px;
+}
+
+#forecast {
+  margin-left: 150px;
+}
+
+#icon {
+  margin-left: -3px;
 }
