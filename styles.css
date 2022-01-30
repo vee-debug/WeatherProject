@@ -83,6 +83,10 @@ h1 {
   text-align: right;
   padding-top: 8px;
 }
+.weather-temp {
+  display: flex;
+  align-items: center;
+}
 .last-updated {
   color: #00335a;
   font-size: 16px;
